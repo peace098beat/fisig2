@@ -7,7 +7,7 @@ Created by 0160929 on 2016/03/23 9:49
 
 import numpy as np
 
-from fisig.signal import SignalData
+from fisig2.signal import SignalData
 
 __version__ = '0.0'
 

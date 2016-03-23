@@ -15,7 +15,7 @@
 
 from core import BaseData
 # from fisig import SpectrumData, SpectrogramData
-from fisig.spectrum import SpectrumData
+from fisig2.spectrum import SpectrumData
 
 
 class SpectrogramData(BaseData):

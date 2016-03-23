@@ -10,7 +10,7 @@ from PySide.QtCore import Slot
 from PySide.QtGui import QMainWindow, QApplication, QWorkspace, QVBoxLayout, QPushButton, QWidget, \
     QStatusBar, QProgressBar
 
-from app.guimodule.FileListWidget import FileListView
+from gui.guitools.FileListWidget import FileListView
 from fisig import SignalData
 
 class MyMDIApp(QMainWindow):
