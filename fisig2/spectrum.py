@@ -14,7 +14,7 @@
 """
 
 from core import BaseData
-from fisig.core.ceps import ceps_gwt
+from fisig2.core.ceps import ceps_gwt
 
 
 class SpectrumData(BaseData):

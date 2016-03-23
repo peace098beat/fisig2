@@ -6,7 +6,7 @@ Created by 0160929 on 2016/03/23 10:16
 """
 from numpy import empty, floor, abs, log10
 
-from fisig.core.gwt import gwt
+from fisig2.core.gwt import gwt
 
 __version__ = '0.0'
 

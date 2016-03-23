@@ -9,7 +9,7 @@
 """
 
 from core import _load_wav, BaseData, _gwt
-from fisig.spectrogram import SpectrogramData
+from fisig2.spectrogram import SpectrogramData
 
 
 class SignalData(BaseData):

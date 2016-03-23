@@ -11,7 +11,7 @@ Created by fifi  (2016/03/22 20:07)
 
 __all__ =['Signal','Spectrum','Spectrogram']
 
-from fisig.signal import SignalData
-from fisig.spectrum import SpectrumData
-from fisig.spectrogram import SpectrogramData
+from fisig2.signal import SignalData
+from fisig2.spectrum import SpectrumData
+from fisig2.spectrogram import SpectrogramData
 
