@@ -73,10 +73,14 @@ class SpectrumData(BaseData):
 
         return SpectrumData(data, xdata)
 
-    def cof(self):
+    def cof(self, mode="log"):
         from numpy import sum as npsum
 
-        data = self.get_amp()
+        if mode == "log":
+            data = self.get_logpow()
+        elif mode == "linear":
+            data = self.get_amp()
+
         freq = self.get_xdata()
 
         c = npsum(data * freq) / npsum(data)
