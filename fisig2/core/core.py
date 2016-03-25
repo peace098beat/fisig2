@@ -106,6 +106,12 @@ class BaseData(object):
     def get_amp(self):
         return abs(self.get_data())
 
+    def get_pow(self):
+        return self.get_amp() ** 2
+
+    def get_logamp(self):
+        return 10 * log10(self.get_amp())
+
     def get_logpow(self):
         return 20 * log10(self.get_amp())
 
