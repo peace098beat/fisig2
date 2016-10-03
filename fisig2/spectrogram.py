@@ -13,9 +13,13 @@
 
 """
 
-from core import BaseData
+#from core.core import BaseData
+import lib.core as lc
+_load_wav = lc._load_wav
+BaseData = lc.BaseData
+
 # from fisig import SpectrumData, SpectrogramData
-from fisig2.spectrum import SpectrumData
+from spectrum import SpectrumData
 
 
 class SpectrogramData(BaseData):
@@ -45,7 +49,12 @@ class SpectrogramData(BaseData):
 
     def __init__(self, data, xdata, ydata):
         super(SpectrogramData, self).__init__()
-        self._set_data(data)
+        # データの削減
+        # complex128 = float64 x 2
+        # complex64 = float32 x 2
+        from numpy import complex64
+        self._set_data(data.astype(complex64))
+
         self._set_xdata(xdata)
         self._set_ydata(ydata)
         self.slc()
@@ -60,7 +69,7 @@ class SpectrogramData(BaseData):
         return self
 
     #: ----------------------------------------------------
-    #: 補助
+    #: Average
     #: ----------------------------------------------------
     def time_average(self):
         from numpy import mean
@@ -69,13 +78,22 @@ class SpectrogramData(BaseData):
         freq = self.get_ydata()
         return SpectrumData(data=data, xdata=freq)
 
+    #: ----------------------------------------------------
+    #: 補助
+    #: ----------------------------------------------------
     def slice_time_ms(self, stms, endms):
         ss = self._ms2smp(stms)
         se = self._ms2smp(endms)
         self._slice_xdata(ss, se)
         return self
 
+    def slice_time_smp(self, start, end):
+        self._slice_xdata(start, end)
+        return self
 
+    #: ----------------------------------------------------
+    #: Plot
+    #: ----------------------------------------------------
     def plot(self):
         import matplotlib.pyplot as plt
 
