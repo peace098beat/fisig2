@@ -14,12 +14,13 @@
 """
 
 #from core.core import BaseData
-import lib.core as lc
-_load_wav = lc._load_wav
-BaseData = lc.BaseData
+# import lib.core as lc
+# _load_wav = lc._load_wav
+# BaseData = lc.BaseData
 
 # from fisig import SpectrumData, SpectrogramData
-from spectrum import SpectrumData
+from .core import *
+from .spectrum import SpectrumData
 
 
 class SpectrogramData(BaseData):

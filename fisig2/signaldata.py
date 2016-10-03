@@ -9,16 +9,9 @@
 """
 import os
 
-# from lib import core
-#import lib.core.BaseData
-#from core import _load_wav, BaseData
-
-# import lib.core as lc
-# _load_wav = lc._load_wav
-# BaseData = lc.BaseData
-from lib.core import *
-from spectrogram import SpectrogramData
-from spectrum import SpectrumData
+from .core import *
+from .spectrogram import SpectrogramData
+from .spectrum import SpectrumData
 
 
 class SignalData(BaseData):

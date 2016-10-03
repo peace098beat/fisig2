@@ -14,12 +14,14 @@
 """
 
 # from core.core import 
-import lib.core as lc
+# import lib.core as lc
 #_load_wav = lc._load_wav
-BaseData = lc.BaseData
+# BaseData = lc.BaseData
 
-from lib.ceps import ceps_gwt
+# from lib.ceps import ceps_gwt
 
+from .core import *
+from .ceps import *
 
 class SpectrumData(BaseData):
     """Spectrumクラスは, 信号データを周波数分析した結果のクラスです.
